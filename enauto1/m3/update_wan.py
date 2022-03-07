@@ -1,9 +1,5 @@
 #!/usr/bin/env python
 
-"""
-Author: Nick Russo
-Purpose: Demonstrate using SSH via netmiko to configure network devices.
-"""
 
 from yaml import safe_load
 from netmiko import Netmiko
@@ -16,18 +12,18 @@ def main():
 
     # Read the hosts file into structured data, may raise YAMLError
     with open("hosts.yml", "r") as handle:
-        host_root = safe_load(handle)
+        host_file = safe_load(handle)
 
     # Load the static configuration snippet
     with open("templates/routing.txt", "r") as handle:
         new_config = handle.read()
 
     # Iterate over the list of hosts (list of dictionaries)
-    for host in host_root["production"]:
+    for host in host["production"]:
 
         # Create netmiko SSH connection handler to access the device
         conn = Netmiko(
-            host=host["name"],
+            host=host_file["ip"],
             username="cisco",
             password="cisco",
             device_type="cisco_ios",

@@ -33,7 +33,7 @@ def main():
 
         # Create netmiko SSH connection handler to access the device
         conn = Netmiko(
-            host=host["name"],
+            host=host["ip"],
             username="cisco",
             password="cisco",
             device_type="cisco_ios",

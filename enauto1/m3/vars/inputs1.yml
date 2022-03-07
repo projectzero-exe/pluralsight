@@ -1,0 +1,7 @@
+---
+config:
+    interface: gigabitethernet 3
+    description: Testing Jinja2 templating
+    ip: 192.168.1.1
+    subnet: 255.255.255.0
+...

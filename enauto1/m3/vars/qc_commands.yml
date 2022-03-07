@@ -1,0 +1,9 @@
+---
+commands:
+  - "show ip route"
+  - "show version | section Cisco IOS XE Software,"
+  - "show version | section uptime"
+  - "show arp"
+  - "show run"
+  - "show netconf-yang status"
+...

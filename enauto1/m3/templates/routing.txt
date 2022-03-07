@@ -1,11 +1,4 @@
-key chain KC_OSPF_AUTH
- key 1
-  key-string SECRET123
-   cryptographic-algorithm hmac-sha-256
-interface Tunnel100
- ip ospf authentication key-chain KC_OSPF_AUTH
-router ospf 1
- passive-interface Loopback0
- auto-cost reference-bandwidth 1000
- ttl-security all-interfaces hops 1
-do write memory
+interface gigabitethernet 2
+description Hello testing setconfig from Netmiko
+interface gigabitethernet 2.100
+description Netmiko Test
